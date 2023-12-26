@@ -19,13 +19,13 @@ const Navbar = () => {
    
     Cookies.remove("token");
 
-    router.push("/");
+    window.location.href= "/";
   };
   
 
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-gray-950 text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -62,7 +62,7 @@ const Navbar = () => {
           <Link href="/" className="btn btn-ghost text-xl">Health AI</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          {/* <ul className="menu menu-horizontal px-1">
             <li>
               <Link href="/">Home</Link>
             </li>
@@ -72,13 +72,13 @@ const Navbar = () => {
             <li>
               <Link href="/aboutus">About Us</Link>
             </li>
-          </ul>
+          </ul> */}
         </div>
         <div className="navbar-end">
         {isAuthenticated ? (
             
             <>
-            <Link href="/profile" className="pr-4">
+            <Link href="/dashboard" className="pr-4">
               Profile
             </Link>
             <button onClick={handleLogout} className="btn">

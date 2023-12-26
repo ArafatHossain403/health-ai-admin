@@ -25,20 +25,16 @@ const SideNav = () => {
           <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
             <li>
-              <Link href="/profile">Home</Link>
+              <Link href="/dashboard">Home</Link>
             </li>
             <li>
-              <a>Diagnosis</a>
+              <Link href="/dashboard">Users</Link>
             </li>
+            
             <li>
-              <a>Feedback</a>
+              <Link href="/feedbacks"> Users Feedbacks</Link>
             </li>
-            <li>
-              <Link href="/profile/overview" >Overview</Link>
-            </li>
-            <li>
-              <Link href="/profile/offers">Our offerings</Link>
-            </li>
+            
           </ul>
         </div>
       </div>
