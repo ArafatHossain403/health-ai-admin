@@ -1,10 +1,10 @@
-// withAuth.js
+// WithAuth.js
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
 
-const withoutAuth = (WrappedComponent) => {
+const WithoutAuth = (WrappedComponent) => {
   const Wrapper = (props) => {
     const router = useRouter();
 
@@ -22,4 +22,4 @@ const withoutAuth = (WrappedComponent) => {
   return Wrapper;
 };
 
-export default withoutAuth;
+export default WithoutAuth;

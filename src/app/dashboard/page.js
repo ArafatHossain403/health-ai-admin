@@ -1,14 +1,13 @@
 'use client'
 import React from "react";
-import withAuth from "../helper/withAuth";
+import WithAuth from "../helper/WithAuth";
 
-const userPage = () => {
+const Dashboard = ({adminData}) => {
   return (
-    <div>
-      <h2>this is profile page</h2>
-      
+    <div className="card card-body">
+      <h2>Hello, {adminData?.name}</h2>
     </div>
   );
 };
 
-export default withAuth(userPage);
+export default WithAuth(Dashboard);

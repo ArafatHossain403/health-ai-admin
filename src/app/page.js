@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie';
 import { callFetcher } from './helper/fetcher';
-import withoutAuth from './helper/withoutAuth';
+import WithoutAuth from './helper/WithoutAuth';
 import { swalError } from './helper/functions';
 
 const HomePage = () => {
@@ -92,4 +92,4 @@ const HomePage = () => {
   );
 };
 
-export default withoutAuth(HomePage);
+export default WithoutAuth(HomePage);

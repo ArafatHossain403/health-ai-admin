@@ -1,5 +1,8 @@
 'use client'
+import { callFetcher } from '@/app/helper/fetcher';
+import { swalError } from '@/app/helper/functions';
 import React, { useEffect, useState } from 'react';
+import WithAuth from '../../helper/WithAuth';
 
 const UsersPage = () => {
     
@@ -8,15 +11,12 @@ const UsersPage = () => {
     useEffect(() => {
       const fetchUsersData = async () => {
         try {
-          const response = await callFetcher('user/list', 'GET', null, {});
-          if (response.ok) {
-            const data = await response.json();
-            setUsers(data);
-          } else {
-            console.error('Failed to fetch data');
+          const response = await callFetcher('user/list', 'GET');
+          if (response) {
+            setUsers(response);
           }
         } catch (error) {
-          console.error('Error during data fetching', error);
+          swalError(error.message);
         }
       };
   
@@ -24,8 +24,8 @@ const UsersPage = () => {
     }, []);
 
     return (
-        <div>
-<div className="overflow-x-auto">
+        <div className="card card-body">
+          <div className="overflow-x-auto">
             <table className="table">
               {/* head */}
               <thead>
@@ -39,20 +39,19 @@ const UsersPage = () => {
               </thead>
               <tbody>
                 {users.map((user) => (
-              <tr key={user.id}>
-                <td>{user.id}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.mobile}</td>
-                <td>{user.address}</td>
-              </tr>
-            ))}
+                  <tr key={user.id}>
+                    <td>{user.id}</td>
+                    <td>{user.name}</td>
+                    <td>{user.email}</td>
+                    <td>{user.mobile}</td>
+                    <td>{user.address}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
-      
         </div>
     );
 };
 
-export default withAuth(sersPage);
+export default WithAuth(UsersPage);
