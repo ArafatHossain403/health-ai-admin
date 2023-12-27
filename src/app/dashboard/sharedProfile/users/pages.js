@@ -1,14 +1,14 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 
-const usersPage = () => {
+const UsersPage = () => {
     
     const [users, setUsers] = useState([]);
   
     useEffect(() => {
       const fetchUsersData = async () => {
         try {
-          const response = await callFetcher('user/allUsers', 'GET', null, {});
+          const response = await callFetcher('user/list', 'GET', null, {});
           if (response.ok) {
             const data = await response.json();
             setUsers(data);

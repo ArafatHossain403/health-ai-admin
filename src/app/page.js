@@ -17,8 +17,8 @@ const HomePage = () => {
       
       const response = await callFetcher('admin/login', 'POST', { email, password });
 
-      if (response.ok) {
-         const { accessToken } = await response.json();
+      if (response.accessToken) {
+         const { accessToken } = response;
         
         //localStorage.setItem('token', accessToken);
         Cookies.set('token', accessToken);
