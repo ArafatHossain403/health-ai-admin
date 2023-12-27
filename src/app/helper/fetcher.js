@@ -14,5 +14,11 @@ export const callFetcher = async (endpoint, method, data, headers) => {
     },
     body: JSON.stringify(data),
   });  
-  return await response.json();   
+  const res_data = await response.json(); 
+  
+  if (res_data.error) {
+    throw new Error(res_data.message);
+  }
+
+  return res_data;
 }

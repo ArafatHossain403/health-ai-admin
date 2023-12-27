@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 export const getApiUrl = () => {
     let url = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
     url = cleanEndSlash(url);
@@ -17,4 +19,12 @@ export function cleanStartingSlash(endpoint) {
 export function cleanEndSlash(endpoint) {
     endpoint = endpoint.endsWith('/') ? endpoint.substring(0, endpoint.length - 1) : endpoint;
     return endpoint;
+}
+export function swalError(message, title = 'Error!') {
+    Swal.fire({
+        title: title,
+        text: message,
+        icon: 'error',
+        confirmButtonText: 'OK',
+    });
 }

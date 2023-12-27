@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie';
 import { callFetcher } from './helper/fetcher';
 import withoutAuth from './helper/withoutAuth';
+import { swalError } from './helper/functions';
 
 const HomePage = () => {
 
@@ -24,11 +25,9 @@ const HomePage = () => {
         Cookies.set('token', accessToken);
         
         window.location.href= '/dashboard';
-      } else {
-        console.error('Authentication failed');
       }
     } catch (error) {
-      console.error('Error during authentication', error);
+      swalError(error.message)
     }
   };
   return (
