@@ -28,7 +28,7 @@ const SideNav = () => {
               <Link href="/dashboard">Home</Link>
             </li>
             <li>
-              <Link href="/dashboard">Users</Link>
+              <Link href="/users">Users</Link>
             </li>
             
             <li>
