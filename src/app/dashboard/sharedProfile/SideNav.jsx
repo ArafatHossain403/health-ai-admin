@@ -30,10 +30,13 @@ const SideNav = () => {
             <li>
               <Link href="/dashboard/users">Users</Link>
             </li>
-            
             <li>
-              <Link href="/feedbacks"> Users Feedbacks</Link>
+              <Link href="/dashboard/diagnosis-history">Diagnosis History</Link>
             </li>
+            
+            {/* <li>
+              <Link href="/feedbacks"> Users Feedbacks</Link>
+            </li> */}
             
           </ul>
         </div>
