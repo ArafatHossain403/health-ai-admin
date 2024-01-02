@@ -10,12 +10,6 @@ const ModalHistory = ({ history }) => {
             <span className="text-amber-500">{history?.user?.name}</span>{" "}
             Diagnosis History In Details
           </p>
-          {history?.user?.gender == "female" && (
-            <div>
-              {" "}
-              <p> Pregnancies: {history?.pregnancies}</p>
-            </div>
-          )}
           <table className="table">
             {/* head */}
             <thead>
